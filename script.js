@@ -1,7 +1,7 @@
 'use strict';
 
 let money = 1000,
-   income = '500',
+   income = 'Фриланс',
    addExpenses = 'Коммуналка, Питание, Интернет, Развлечения',
    deposit = true,
    mission = 10000,
@@ -16,5 +16,6 @@ console.log('Период равен ' + period + ' месяцев. Цель з�
 addExpenses = addExpenses.toLowerCase().split(',');
 console.log(addExpenses);
 
-let budgetDay = (money + (+income)) / 30;
+let budgetDay = Math.floor(money / 30);
+
 console.log(budgetDay);
