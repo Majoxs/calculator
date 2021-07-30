@@ -5,5 +5,5 @@ let money,
    mission,
    period;
 
-alert('Hello Majoxs');
-console.log('Hello Majoxs');
+alert('Hellow Majoxs');
+console.log('Hellow Majoxs');
