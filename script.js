@@ -10,37 +10,32 @@ const money = Number(prompt('Ваш месячный доход?')),
    amount1 = Number(prompt('Во сколько это обойдётся?')),
    expenses2 = prompt('Введите обязательную статью расходов №2'),
    amount2 = Number(prompt('Во сколько это обойдётся?')),
+   getExpensesMonth = function () {
+      return amount1 + amount2;
+   },
+   getAccumulatedMonth = function () {
+      return money - getExpensesMonth();
+   },
    accumulatedMonth = getAccumulatedMonth(),
-   budgetDay = Math.floor(accumulatedMonth / 30);
-
-let showTypeOf = function (data) {
-   console.log(data, typeof (data));
-};
-let periodMission = Math.ceil(mission / accumulatedMonth);
-let getStatusIncome = function () {
-   if (budgetDay >= 1200) {
-      return ('У Вас высокий уровень дохода');
-   } else if (budgetDay >= 600) {
-      return ('У Вас средний уровень дохода');
-   } else if (budgetDay < 600 && budgetDay >= 0) {
-      return ('К сожалению у Вас уровень дохода ниже среднего');
-   } else {
-      return ('Что-то пошло не так');
-   }
-};
-
-
-function getExpensesMonth() {
-   return amount1 + amount2;
-}
-
-function getTargetMonth() {
-   return Math.ceil(mission / accumulatedMonth);
-}
-
-function getAccumulatedMonth() {
-   return money - getExpensesMonth();
-}
+   budgetDay = Math.floor(accumulatedMonth / 30),
+   periodMission = Math.ceil(mission / accumulatedMonth),
+   showTypeOf = function (data) {
+      console.log(data, typeof (data));
+   },
+   getTargetMonth = function () {
+      return Math.ceil(mission / accumulatedMonth);
+   },
+   getStatusIncome = function () {
+      if (budgetDay >= 1200) {
+         return ('У Вас высокий уровень дохода');
+      } else if (budgetDay >= 600) {
+         return ('У Вас средний уровень дохода');
+      } else if (budgetDay < 600 && budgetDay >= 0) {
+         return ('К сожалению у Вас уровень дохода ниже среднего');
+      } else {
+         return ('Что-то пошло не так');
+      }
+   };
 
 showTypeOf(money);
 showTypeOf(income);
