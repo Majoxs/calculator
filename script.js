@@ -4,7 +4,8 @@ const isNumber = function (n) {
    return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
-let money;
+let money,
+   expenses = [];
 const income = 'Фриланс',
    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
    deposit = confirm('Есть ли у вас депозит в банке?'),
@@ -42,7 +43,7 @@ const getStatusIncome = function () {
    }
 };
 
-let expenses = [];
+
 let getExpensesMonth = function () {
    let sum = 0;
    let prob = 0;
