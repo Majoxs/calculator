@@ -11,7 +11,7 @@ let money,
 
 start();
 
-let appData = {
+const appData = {
    budget: money,
    budgetDay: 0,
    budgetMonth: 0,
@@ -114,7 +114,7 @@ for (let key in appData) {
    console.log('Свойства: ' + key + '\n' + 'Значение: ' + appData[key]);
 }
 
-let word = appData.addExpenses.map(item => {
+const word = appData.addExpenses.map(item => {
    const newWord = item[0].toUpperCase() + item.slice(1);
    return newWord;
 });
