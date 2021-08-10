@@ -118,5 +118,4 @@ const word = appData.addExpenses.map(item => {
    const newWord = item[0].toUpperCase() + item.slice(1);
    return newWord;
 });
-
 console.log(word.join(', '));
