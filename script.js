@@ -1,6 +1,5 @@
 'use strict';
 
-
 let money,
    start = function () {
       do {
@@ -104,9 +103,9 @@ const appData = {
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
+appData.getTargetMonth();
 
 console.log(`Расходы за месяц: ${appData.expensesMonth}`);
-appData.getTargetMonth();
 console.log(appData.getStatusIncome());
 console.log('Наша программа включает в себя данные:');
 
