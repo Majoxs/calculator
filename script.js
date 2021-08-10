@@ -1,12 +1,12 @@
 'use strict';
 
-let money,
-   start = function () {
-      do {
-         money = +prompt('Ваш месячный доход?');
-      }
-      while (isNaN(money) || money === '' || money === null || money == 0);
-   };
+let money;
+const start = function () {
+   do {
+      money = +prompt('Ваш месячный доход?');
+   }
+   while (isNaN(money) || money === '' || money === null || money == 0);
+};
 
 start();
 
