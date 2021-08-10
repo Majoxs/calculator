@@ -1,12 +1,13 @@
 'use strict';
 
-let money;
-const start = function () {
-   do {
-      money = +prompt('Ваш месячный доход?');
-   }
-   while (isNaN(money) || money === '' || money === null || money == 0);
-};
+
+let money,
+   start = function () {
+      do {
+         money = +prompt('Ваш месячный доход?');
+      }
+      while (isNaN(money) || money === '' || money === null || money == 0);
+   };
 
 start();
 
@@ -14,11 +15,11 @@ let appData = {
    budget: money,
    budgetDay: 0,
    budgetMonth: 0,
-   expensesMonth: 0,
-   addExpenses: [],
-   addIncome: [],
    income: {},
+   addIncome: [],
    expenses: {},
+   addExpenses: [],
+   expensesMonth: 0,
    deposit: false,
    mission: 50000,
    period: 3,
@@ -37,11 +38,10 @@ let appData = {
       }
    },
    getExpensesMonth: function () {
-      let sum = 0;
+
       for (let key in appData.expenses) {
-         sum += appData.expenses[key];
+         appData.expensesMonth += appData.expenses[key];
       }
-      appData.expensesMonth = sum;
    },
    getBudget: function () {
       appData.budgetMonth = appData.budget - appData.expensesMonth;
@@ -75,6 +75,7 @@ console.log(`Расходы за месяц: ${appData.expensesMonth}`);
 appData.getTargetMonth();
 console.log(appData.getStatusIncome());
 console.log('Наша программа включает в себя данные:');
+
 for (let key in appData) {
    console.log('Свойства: ' + key + '\n' + 'Значение: ' + appData[key]);
 }
