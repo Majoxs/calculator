@@ -1,4 +1,26 @@
 'use strict';
+const start2 = document.getElementById('start'),
+   incomeBlock = document.querySelector('div.income'),
+   incomeAdd = incomeBlock.getElementsByTagName('button'),
+   expensesBlock = document.querySelector('div.expenses'),
+   expensesAdd = expensesBlock.getElementsByTagName('button'),
+   depositCheck = document.querySelector('#deposit-check'),
+   additionalIncomeElems = document.querySelectorAll('.additional_income-item'),
+   budgetMonthValue = document.getElementsByClassName('budget_month-value'),
+   budgetDayValue = document.getElementsByClassName('budget_day-value'),
+   expensesMonthValue = document.getElementsByClassName('expenses_month-value'),
+   additionalIncomeValue = document.getElementsByClassName('additional_income-value'),
+   additionalExpensesValue = document.getElementsByClassName('additional_expenses-value'),
+   incomePeriodValue = document.getElementsByClassName('income_period-value'),
+   targetMonthValue = document.getElementsByClassName('target_month-value'),
+   salaryAmount = document.querySelector('input.salary-amount'),
+   incomeTitle = document.querySelector('input.income-title'),
+   incomeAmount = document.querySelector('input.income-amount'),
+   expensesTitle = document.querySelector('input.expenses-title'),
+   expensesAmount = document.querySelector('input.expenses-amount'),
+   additionalExpensesItem = document.querySelector('input.additional_expenses-item'),
+   targetAmount = document.querySelector('input.target-amount'),
+   periodSelect = document.querySelector('input.period-select');
 
 let money;
 const start = function () {
