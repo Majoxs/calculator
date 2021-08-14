@@ -154,11 +154,14 @@ const appData = {
    }
 };
 
-start.addEventListener('click', function (event) {
+start.setAttribute('disabled', 'disabled');
+salaryAmount.addEventListener('input', function () {
    if (salaryAmount.value === '') {
-      event.preventDefault();
+      start.setAttribute('disabled', 'disabled');
+   } else {
+      start.removeAttribute('disabled');
+      start.addEventListener('click', appData.start);
    }
-   appData.start();
 });
 
 incomePlus.addEventListener('click', appData.addIncomeBlock);
