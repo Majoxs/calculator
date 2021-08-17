@@ -245,10 +245,3 @@ cancel.addEventListener('click', appData.reset.bind(appData));
 periodSelect.addEventListener('input', function () {
    numberPeriod.textContent = periodSelect.value;
 });
-
-let addExp = [];
-for (let i = 0; i < appData.addExpenses.length; i++) {
-   let element = appData.addExpenses[i].trim();
-   element = element.charAt(0).toUpperCase() + element.substring(1).toLowerCase();
-   addExp.push(element);
-}
