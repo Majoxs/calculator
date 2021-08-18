@@ -72,6 +72,7 @@ const appData = {
 
    },
    showResult: function () {
+      const _this = this;
       budgetMonthValue.value = this.budgetMonth;
       budgetDayValue.value = this.budgetDay;
       expensesMonthValue.value = this.expensesMonth;
@@ -81,8 +82,8 @@ const appData = {
       incomePeriodValue.value = this.calcPeriod();
 
 
-      periodSelect.addEventListener('change', function () {
-         incomePeriodValue.value = this.calcPeriod();
+      periodSelect.addEventListener('input', function () {
+         incomePeriodValue.value = _this.calcPeriod();
       });
    },
    addIncomeBlock: function () {
