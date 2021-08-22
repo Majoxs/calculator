@@ -245,14 +245,12 @@ class AppData {
       const valueSelect = this.value;
       if (valueSelect === 'other') {
          depositPercent.style.display = 'inline-block';
+         depositPercent.value = '';
          depositPercent.addEventListener('input', function () {
-            if (depositPercent.value >= 0 && depositPercent.value <= 100) {
-               start.removeAttribute('disabled');
-               depositPercent.value = depositPercent.value;
+            if (depositPercent.value > 100) {
+               depositPercent.value = 100;
             } else {
-               alert('Введите корректное значение в поле проценты');
-               start.setAttribute('disabled', 'true');
-               depositPercent.value = '';
+               depositPercent.value = depositPercent.value;
             }
          });
       } else {
